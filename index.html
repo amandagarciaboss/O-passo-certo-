@@ -1,0 +1,674 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Recomeço | Com Calma e Sem Pressa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display, Great Vibes & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blush: '#fff1f2',
+                        roseSoft: '#f43f5e',
+                        warmCream: '#fffbfb',
+                        goldAccent: '#d97706',
+                        deepRose: '#9f1239',
+                        softPinkBg: '#fff5f7'
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        script: ['Great Vibes', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+            50% { transform: translateY(-20px) rotate(5deg); opacity: 1; }
+            100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+        }
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(244, 63, 94, 0.3); }
+            50% { box-shadow: 0 0 30px rgba(244, 63, 94, 0.6); }
+        }
+        @keyframes treeGrow {
+            0% { transform: scale(0.98); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .floating-heart {
+            animation: float 4s ease-in-out infinite;
+        }
+        .pulse-glow {
+            animation: pulseGlow 3s ease-in-out infinite;
+        }
+        .tree-animate {
+            animation: treeGrow 0.5s ease-out;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fff1f2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f43f5e;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-softPinkBg text-gray-800 font-sans antialiased relative overflow-x-hidden selection:bg-rose-200 selection:text-deepRose">
+
+    <!-- Floating Background Petals/Hearts -->
+    <div id="bg-elements" class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
+        <!-- Generated dynamically via JS -->
+    </div>
+
+    <!-- Header / Nav -->
+    <header class="sticky top-0 z-50 bg-white/85 backdrop-blur-md border-b border-rose-100 shadow-sm transition-all">
+        <div class="max-w-4xl mx-auto px-4 py-3 flex justify-between items-center">
+            <span class="font-script text-3xl sm:text-4xl text-rose-600 font-bold">Nosso Recomeço</span>
+            <nav class="hidden sm:flex space-x-6 text-sm font-medium text-gray-600">
+                <a href="#nossa-historia" class="hover:text-rose-600 transition">Nossa História</a>
+                <a href="#deixar-para-tras" class="hover:text-rose-600 transition">Nossos Acordos</a>
+                <a href="#surpresas" class="hover:text-rose-600 transition">Mimos 💌</a>
+                <a href="#torcidometro" class="hover:text-rose-600 transition">Torcidômetro & Árvore</a>
+            </nav>
+            <button id="mobile-menu-btn" class="sm:hidden text-rose-600 focus:outline-none p-1">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden sm:hidden bg-white border-b border-rose-100 px-4 pt-2 pb-4 space-y-2">
+            <a href="#nossa-historia" class="block text-gray-600 hover:text-rose-600 py-1">Nossa História</a>
+            <a href="#deixar-para-tras" class="block text-gray-600 hover:text-rose-600 py-1">Nossos Acordos</a>
+            <a href="#surpresas" class="block text-gray-600 hover:text-rose-600 py-1">Mimos 💌</a>
+            <a href="#torcidometro" class="block text-gray-600 hover:text-rose-600 py-1">Torcidômetro & Árvore</a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="relative z-10 max-w-3xl mx-auto px-4 py-8 sm:py-12 space-y-16">
+
+        <!-- Hero Section -->
+        <section id="nossa-historia" class="text-center space-y-6 pt-4">
+            <div class="inline-flex items-center gap-2 bg-rose-100 text-rose-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-wide shadow-sm">
+                <span class="inline-block w-2 h-2 rounded-full bg-rose-500 animate-ping"></span>
+                Desde 4 de maio • Com calma e sem pressa
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-gray-900 leading-tight">
+                Tentar de novo,<br><span class="font-script text-rose-600 text-6xl sm:text-7xl">dessa vez do jeito certo.</span>
+            </h1>
+
+            <div class="bg-white/95 backdrop-blur shadow-xl rounded-3xl p-6 sm:p-10 border border-rose-100/80 text-left space-y-4 text-gray-700 leading-relaxed text-base sm:text-lg">
+                <p>
+                    Já se passaram 4 meses desde aquela primeira mensagem no dia 4 de maio. Quatro meses de uma montanha-russa que só nós duas conhecemos de verdade. Tivemos muitos altos e baixos  muitos mesmos. Nos afastamos, nos reaproximamos, afastamos de novo e hoje estamos tentando mais uma vez, mas dessa vez com calma e sem pressa, pra fazer dar certo.
+                </p>
+                <p>
+                    A verdade que pulsa aqui no meu peito é que, por mais voltas que o mundo dê, a nossa conexão insiste em permanecer. E hoje estamos aqui, escolhendo respirar fundo e construir um espaço seguro onde a gente possa dar certo de verdade.
+                </p>
+                <p class="font-serif italic text-rose-700 text-center pt-2">
+                    "O amor maduro não é aquele sem cicatrizes, mas aquele que aprendeu a cuidar das feridas juntos."
+                </p>
+            </div>
+
+            <!-- Live Timer Section (4 Months Counter) -->
+            <div class="bg-gradient-to-br from-white to-rose-50/50 shadow-lg rounded-3xl p-6 sm:p-8 border border-rose-200/60 text-center space-y-4 pulse-glow">
+                <h3 class="font-serif text-xl sm:text-2xl text-gray-800">Nosso tempo desde o primeiro "Olá" (4 de Maio)</h3>
+                <p class="text-xs sm:text-sm text-gray-500">Contando cada segundo desde 4 de maio de 2026 às 00:00:00</p>
+                
+                <div id="timer-grid" class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                    <div class="bg-white/80 rounded-2xl p-3 shadow-sm border border-rose-100">
+                        <span id="days" class="block font-bold text-2xl sm:text-3xl text-rose-600 font-serif">00</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Dias</span>
+                    </div>
+                    <div class="bg-white/80 rounded-2xl p-3 shadow-sm border border-rose-100">
+                        <span id="hours" class="block font-bold text-2xl sm:text-3xl text-rose-600 font-serif">00</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Horas</span>
+                    </div>
+                    <div class="bg-white/80 rounded-2xl p-3 shadow-sm border border-rose-100">
+                        <span id="minutes" class="block font-bold text-2xl sm:text-3xl text-rose-600 font-serif">00</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Minutos</span>
+                    </div>
+                    <div class="bg-white/80 rounded-2xl p-3 shadow-sm border border-rose-100">
+                        <span id="seconds" class="block font-bold text-2xl sm:text-3xl text-rose-600 font-serif">00</span>
+                        <span class="text-xs text-gray-500 uppercase tracking-wider font-medium">Segundos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- "What We Choose to Leave Behind" Section -->
+        <section id="deixar-para-tras" class="space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-rose-600 font-semibold tracking-wider text-xs sm:text-sm uppercase">Nossos Acordos de Paz</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-gray-900">O que escolhemos deixar para trás</h2>
+                <p class="text-gray-600 max-w-xl mx-auto text-sm sm:text-base">
+                    Para proteger a nossa paz e garantir que este recomeço seja leve, construí estes pontos com carinho para avaliarmos juntas. Clique em cada um para ver o que colocaremos no lugar.
+                </p>
+            </div>
+
+            <div class="space-y-4" id="cards-container">
+                
+                <!-- Card 1 -->
+                <div class="bg-white rounded-3xl shadow-md border border-rose-100 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button onclick="toggleCard(1)" class="w-full p-5 sm:p-6 text-left flex justify-between items-center focus:outline-none bg-gradient-to-r from-rose-50/50 to-white">
+                        <span class="font-serif font-bold text-base sm:text-lg text-gray-900 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-sm font-sans shrink-0">1</span>
+                            O orgulho e a necessidade de "vencer" as discussões
+                        </span>
+                        <svg id="arrow-1" class="w-5 h-5 text-rose-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="content-1" class="hidden px-6 pb-6 pt-2 space-y-4 border-t border-rose-50 text-gray-700 text-sm sm:text-base">
+                        <div class="bg-rose-50/60 p-4 rounded-2xl border border-rose-100/60">
+                            <h4 class="font-semibold text-rose-800 mb-1 flex items-center gap-2">
+                                🌱 O que entra no lugar:
+                            </h4>
+                            <p>Entender que numa relação não existe uma vencedora se as duas saírem machucadas. O objetivo deixa de ser "estar certa" e passa a ser "cuidar de nós".</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/60">
+                            <h4 class="font-semibold text-amber-800 mb-1 flex items-center gap-2">
+                                💭 Para avaliarmos:
+                            </h4>
+                            <p class="italic">Você aceita que a gente largue essa mania de querer ter a última palavra, focando em resolver o problema em vez de competir? Se for bom para você e para mim, vamos tentar isto juntas?</p>
+                        </div>
+                        <div class="text-right">
+                            <button onclick="acceptPoint(1, this)" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-sm">
+                                🤍 Aceito este acordo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-3xl shadow-md border border-rose-100 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button onclick="toggleCard(2)" class="w-full p-5 sm:p-6 text-left flex justify-between items-center focus:outline-none bg-gradient-to-r from-rose-50/50 to-white">
+                        <span class="font-serif font-bold text-base sm:text-lg text-gray-900 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-sm font-sans shrink-0">2</span>
+                            Expor desentendimentos ou levar o calor do momento para a internet
+                        </span>
+                        <svg id="arrow-2" class="w-5 h-5 text-rose-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="content-2" class="hidden px-6 pb-6 pt-2 space-y-4 border-t border-rose-50 text-gray-700 text-sm sm:text-base">
+                        <div class="bg-rose-50/60 p-4 rounded-2xl border border-rose-100/60">
+                            <h4 class="font-semibold text-rose-800 mb-1 flex items-center gap-2">
+                                🌱 O que entra no lugar:
+                            </h4>
+                            <p>Resguardar a nossa intimidade. Se a gente brigar ou se distanciar, os nossos problemas ficam entre nós duas, sem indiretas em redes sociais ou bloqueios impulsivos.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/60">
+                            <h4 class="font-semibold text-amber-800 mb-1 flex items-center gap-2">
+                                💭 Para avaliarmos:
+                            </h4>
+                            <p class="italic">Você concorda em manter a nossa relação privada e blindada da internet? Se isso te der mais segurança e paz, como me dá, você topa adotar este acordo?</p>
+                        </div>
+                        <div class="text-right">
+                            <button onclick="acceptPoint(2, this)" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-sm">
+                                🤍 Aceito este acordo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-3xl shadow-md border border-rose-100 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button onclick="toggleCard(3)" class="w-full p-5 sm:p-6 text-left flex justify-between items-center focus:outline-none bg-gradient-to-r from-rose-50/50 to-white">
+                        <span class="font-serif font-bold text-base sm:text-lg text-gray-900 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-sm font-sans shrink-0">3</span>
+                            Acumular sentimentos engasgados e fingir que está tudo bem
+                        </span>
+                        <svg id="arrow-3" class="w-5 h-5 text-rose-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="content-3" class="hidden px-6 pb-6 pt-2 space-y-4 border-t border-rose-50 text-gray-700 text-sm sm:text-base">
+                        <div class="bg-rose-50/60 p-4 rounded-2xl border border-rose-100/60">
+                            <h4 class="font-semibold text-rose-800 mb-1 flex items-center gap-2">
+                                🌱 O que entra no lugar:
+                            </h4>
+                            <p>Falar o que incomoda no momento certo, sem explosões, mas sem varrer para debaixo do tapeto. Ter espaço para dizer "isso me chateou" sem medo de virar uma guerra.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/60">
+                            <h4 class="font-semibold text-amber-800 mb-1 flex items-center gap-2">
+                                💭 Para avaliarmos:
+                            </h4>
+                            <p class="italic">Você acha que conseguimos nos comprometer a falar o que sentimos com mais calma, sem deixar o silêncio virar uma bomba-relógio? Se for confortável para você, eu quero muito aprender a fazer isto do seu lado.</p>
+                        </div>
+                        <div class="text-right">
+                            <button onclick="acceptPoint(3, this)" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-sm">
+                                🤍 Aceito este acordo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-3xl shadow-md border border-rose-100 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button onclick="toggleCard(4)" class="w-full p-5 sm:p-6 text-left flex justify-between items-center focus:outline-none bg-gradient-to-r from-rose-50/50 to-white">
+                        <span class="font-serif font-bold text-base sm:text-lg text-gray-900 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-sm font-sans shrink-0">4</span>
+                            Cobrar o passado ou usar erros antigos como munição
+                        </span>
+                        <svg id="arrow-4" class="w-5 h-5 text-rose-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="content-4" class="hidden px-6 pb-6 pt-2 space-y-4 border-t border-rose-50 text-gray-700 text-sm sm:text-base">
+                        <div class="bg-rose-50/60 p-4 rounded-2xl border border-rose-100/60">
+                            <h4 class="font-semibold text-rose-800 mb-1 flex items-center gap-2">
+                                🌱 O que entra no lugar:
+                            </h4>
+                            <p>O que passou, passou. Os erros que cometemos durante os afastamentos e as brigas anteriores servem de aprendizado para não repetirmos, mas não devem ser jogados à cara na primeira discussão nova.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/60">
+                            <h4 class="font-semibold text-amber-800 mb-1 flex items-center gap-2">
+                                💭 Para avaliarmos:
+                            </h4>
+                            <p class="italic">Você concorda em fechar a gaveta do que já passou e focar apenas no presente que estamos a construir agora? Se isto for leve para o seu coração, vamos tentar?</p>
+                        </div>
+                        <div class="text-right">
+                            <button onclick="acceptPoint(4, this)" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-sm">
+                                🤍 Aceito este acordo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-3xl shadow-md border border-rose-100 overflow-hidden transition-all duration-300 hover:shadow-lg">
+                    <button onclick="toggleCard(5)" class="w-full p-5 sm:p-6 text-left flex justify-between items-center focus:outline-none bg-gradient-to-r from-rose-50/50 to-white">
+                        <span class="font-serif font-bold text-base sm:text-lg text-gray-900 flex items-center gap-3">
+                            <span class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center text-sm font-sans shrink-0">5</span>
+                            Tomar decisões sozinhas ou impor o ritmo das coisas
+                        </span>
+                        <svg id="arrow-5" class="w-5 h-5 text-rose-500 transition-transform duration-300 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="content-5" class="hidden px-6 pb-6 pt-2 space-y-4 border-t border-rose-50 text-gray-700 text-sm sm:text-base">
+                        <div class="bg-rose-50/60 p-4 rounded-2xl border border-rose-100/60">
+                            <h4 class="font-semibold text-rose-800 mb-1 flex items-center gap-2">
+                                🌱 O que entra no lugar:
+                            </h4>
+                            <p>Respeitar o tempo de cada uma e decidir as coisas conversando, garantindo que as duas estão a querer e a sentir-se confortáveis com o rumo que estamos a tomar.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/60">
+                            <h4 class="font-semibold text-amber-800 mb-1 flex items-center gap-2">
+                                💭 Para avaliarmos:
+                            </h4>
+                            <p class="italic">Você aceita que a gente caminhe no nosso ritmo, sempre a conferir se está bom para nós duas, sem pressa e sem imposições? Como você se sente em relação a isto?</p>
+                        </div>
+                        <div class="text-right">
+                            <button onclick="acceptPoint(5, this)" class="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-4 py-2 rounded-xl text-sm font-medium transition shadow-sm">
+                                🤍 Aceito este acordo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Final Acceptance Prompt -->
+            <div class="bg-gradient-to-r from-rose-500 to-rose-600 text-white rounded-3xl p-6 sm:p-8 shadow-xl text-center space-y-6">
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold leading-snug">
+                    Tudo isso é o que eu mais tenho que mudar em mim.
+                </h3>
+                <p class="text-rose-100 text-base sm:text-lg max-w-lg mx-auto">
+                    Você aceita ficar do meu lado enquanto eu transformo esses erros em acertos?
+                </p>
+                <div>
+                    <button onclick="celebrateAcceptance()" class="bg-white text-rose-600 hover:bg-rose-50 font-bold px-8 py-3.5 rounded-2xl shadow-lg transition transform hover:scale-105 active:scale-95 text-base sm:text-lg">
+                        ✨ Sim, eu aceito tentar juntas! 💖
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surprise Cute Phrases Generator (32 Phrases) -->
+        <section id="surpresas" class="space-y-6">
+            <div class="text-center space-y-2">
+                <span class="text-rose-600 font-semibold tracking-wider text-xs sm:text-sm uppercase">Pílulas de Carinho</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-gray-900">Mimos para o seu coração 💌</h2>
+                <p class="text-gray-600 text-sm sm:text-base">Clique no botão abaixo sempre que quiser ler algo fofo que preparei para você.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-rose-100 text-center space-y-6 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-rose-50 rounded-full pointer-events-none"></div>
+                <div class="absolute -bottom-10 -left-10 w-32 h-32 bg-amber-50/50 rounded-full pointer-events-none"></div>
+                
+                <div class="min-h-[120px] flex items-center justify-center px-4">
+                    <p id="phrase-display" class="font-serif text-xl sm:text-2xl text-gray-800 transition-opacity duration-500 leading-relaxed">
+                        "Clique no botão abaixo para receber um mimo especial de amor." ✨
+                    </p>
+                </div>
+
+                <div class="pt-2">
+                    <button onclick="getRandomPhrase()" class="bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-medium px-6 py-3 rounded-2xl shadow-md transition transform hover:scale-105 active:scale-95 text-sm sm:text-base inline-flex items-center gap-2">
+                        <span>✨</span> Gerar um Mimo Surpresa
+                    </button>
+                </div>
+                <p id="phrase-counter" class="text-xs text-gray-400">Mensagem 0 de 32</p>
+            </div>
+        </section>
+
+        <!-- Relationship Tracker & Growing Tree ("Torcidômetro") -->
+        <section id="torcidometro" class="space-y-8">
+            <div class="text-center space-y-2">
+                <span class="text-rose-600 font-semibold tracking-wider text-xs sm:text-sm uppercase">Crescendo Juntas</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-gray-900">Torcidômetro & Nossa Árvore 🌳💖</h2>
+                <p class="text-gray-600 text-sm sm:text-base">Aperte os botões para enviar boas energias. Cada toque em qualquer um dos botões faz a nossa árvore crescer e florescer mais!</p>
+            </div>
+
+            <!-- Growing Tree Visualization Box -->
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-100 text-center space-y-4">
+                <div class="relative w-48 h-48 sm:w-56 sm:h-56 mx-auto bg-rose-50/60 rounded-full flex flex-col items-center justify-center border-2 border-rose-200/60 transition-all duration-500" id="tree-container">
+                    <!-- Dynamic Tree Graphic based on total score -->
+                    <div id="tree-graphic" class="text-6xl sm:text-7xl transition-all duration-500 select-none">
+                        🌱
+                    </div>
+                    <div class="absolute bottom-4 text-xs font-semibold text-rose-700 bg-white/90 px-3 py-1 rounded-full shadow-sm border border-rose-100" id="tree-status-text">
+                        Broto Inicial (Estágio 1)
+                    </div>
+                </div>
+                <p class="text-xs sm:text-sm text-gray-500 max-w-md mx-auto">
+                    Total de toques conjuntas: <span id="total-combined-score" class="font-bold text-rose-600">0</span>
+                </p>
+            </div>
+
+            <!-- Buttons Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                
+                <!-- Card Button 1 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-100 flex flex-col justify-between space-y-6 text-center hover:border-rose-200 transition">
+                    <div class="space-y-2">
+                        <div class="w-12 h-12 bg-rose-100 rounded-2xl flex items-center justify-center mx-auto text-rose-600 text-2xl">
+                            💚
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-gray-900">Torcer para o relacionamento dar certo</h3>
+                        <p class="text-xs sm:text-sm text-gray-500">Cada toque é uma dose extra de fé no nosso amor e no nosso recomeço.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <span id="score-1" class="block font-serif text-4xl sm:text-5xl font-bold text-rose-600">0</span>
+                        <button onclick="boostCounter(1)" class="w-full bg-rose-50 hover:bg-rose-100 text-rose-700 font-semibold py-3 px-4 rounded-2xl transition shadow-sm active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
+                            💚 Torcer Mais Um Pouco
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card Button 2 -->
+                <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-rose-100 flex flex-col justify-between space-y-6 text-center hover:border-rose-200 transition">
+                    <div class="space-y-2">
+                        <div class="w-12 h-12 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto text-amber-600 text-2xl">
+                            ✨
+                        </div>
+                        <h3 class="font-serif font-bold text-lg text-gray-900">Estamos nos sentindo felizes e no caminho certo</h3>
+                        <p class="text-xs sm:text-sm text-gray-500">Aperte sempre que sentirem aquele quentinho no peito e paz juntas hoje.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <span id="score-2" class="block font-serif text-4xl sm:text-5xl font-bold text-amber-600">0</span>
+                        <button onclick="boostCounter(2)" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-700 font-semibold py-3 px-4 rounded-2xl transition shadow-sm active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base">
+                            ✨ Estamos Felizes Agora!
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center py-8 border-t border-rose-100 space-y-3 text-sm text-gray-500">
+            <p class="font-script text-3xl text-rose-600 font-bold">Feito com todo o amor do mundo para você</p>
+            <p>Com calma, sem pressa, e com a certeza de que vale a pena tentar de novo. 🤍</p>
+            <p class="text-xs text-gray-400 pt-2">4 de maio até a eternidade • Nosso Recomeço</p>
+        </footer>
+
+    </main>
+
+    <!-- Custom Modal Message Box (instead of alert) -->
+    <div id="custom-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-sm hidden px-4">
+        <div class="bg-white rounded-3xl p-6 sm:p-8 max-w-sm w-full text-center space-y-4 shadow-2xl border border-rose-100 transform transition-all scale-95 opacity-0" id="modal-box">
+            <div id="modal-icon" class="text-4xl">💖</div>
+            <h3 id="modal-title" class="font-serif text-xl font-bold text-gray-900">Que alegria!</h3>
+            <p id="modal-text" class="text-gray-600 text-sm sm:text-base leading-relaxed">Sua escolha foi guardada no meu coração com muito carinho.</p>
+            <button onclick="closeModal()" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium py-2.5 rounded-xl transition text-sm">
+                Continuar
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Floating Background Petals Generator
+        const bgContainer = document.getElementById('bg-elements');
+        const symbols = ['❤', '✨', '🌸', '🤍', '⭐'];
+        for (let i = 0; i < 18; i++) {
+            const span = document.createElement('span');
+            span.className = 'absolute floating-heart text-rose-300 select-none';
+            span.style.left = `${Math.random() * 100}%`;
+            span.style.top = `${Math.random() * 100}%`;
+            span.style.fontSize = `${Math.random() * 16 + 12}px`;
+            span.style.animationDuration = `${Math.random() * 5 + 3}s`;
+            span.style.animationDelay = `${Math.random() * 3}s`;
+            span.innerText = symbols[Math.floor(Math.random() * symbols.length)];
+            bgContainer.appendChild(span);
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Live Timer Calculation (Since May 4th, 2026)
+        const startDate = new Date('2026-05-04T00:00:00');
+
+        function updateTimer() {
+            const now = new Date();
+            let diff = now - startDate;
+
+            if (diff > 0) {
+                let totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+                let totalHours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                let totalMinutes = Math.floor((diff / 1000 / 60) % 60);
+                let totalSeconds = Math.floor((diff / 1000) % 60);
+
+                document.getElementById('days').innerText = String(totalDays).padStart(2, '0');
+                document.getElementById('hours').innerText = String(totalHours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(totalMinutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(totalSeconds).padStart(2, '0');
+            }
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Accordion Toggle for Agreement Cards
+        function toggleCard(id) {
+            const content = document.getElementById(`content-${id}`);
+            const arrow = document.getElementById(`arrow-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                arrow.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Custom Modal Function
+        function showModal(title, text, icon = '💖') {
+            const modal = document.getElementById('custom-modal');
+            const box = document.getElementById('modal-box');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-text').innerText = text;
+            document.getElementById('modal-icon').innerText = icon;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                box.classList.remove('scale-95', 'opacity-0');
+                box.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            const box = document.getElementById('modal-box');
+            box.classList.remove('scale-100', 'opacity-100');
+            box.classList.add('scale-95', 'opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        // Accept specific point
+        function acceptPoint(id, btn) {
+            btn.innerHTML = '✨ Acordo Aceito com Carinho! 🤍';
+            btn.classList.remove('bg-rose-600', 'hover:bg-rose-700');
+            btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+            btn.disabled = true;
+            showModal('Acordo Selado!', `O ponto ${id} foi acolhido por nós duas. Vamos juntas nessa! 🌱`);
+        }
+
+        // Celebrate final acceptance
+        function celebrateAcceptance() {
+            showModal('Nosso Recomeço!', 'Que lindo saber que estamos na mesma página. Com calma, paciência e sem pressa, vamos fazer dar certo! 💍✨', '🥂');
+        }
+
+        // 32 Cute Phrases Array
+        const cutePhrases = [
+            "Mesmo com todos os altos e baixos, meu lugar favorito no mundo ainda é o seu abraço.",
+            "Nossa história não é perfeita, mas é nossa, e eu não mudaria nenhuma vírgula da nossa essência.",
+            "Estou disposta a desacelerar o passo só para caminhar no mesmo ritmo que o seu.",
+            "Lembra da nossa primeira conversa em 4 de maio? Ali começou algo que marcou minha vida para sempre.",
+            "Você é a única pessoa com quem eu quero errar, aprender, crescer e recomeçar.",
+            "O meu orgulho nunca vai ser maior do que a vontade que eu tenho de te ver sorrir.",
+            "Com calma e sem pressa. Vamos construir um amor que dure a vida inteira.",
+            "Sua risada é o som mais bonito que meus ouvidos já tiveram o privilégio de escutar.",
+            "A distância que às vezes nos separa só me mostra o quanto eu faço questão da sua presença.",
+            "Obrigada por tentar de novo comigo. Vamos fazer valer cada segundo desta vez.",
+            "Nossos defeitos combinam tanto que até quando brigamos a gente acaba querendo voltar.",
+            "Seu olhar tem a paz que meu coração agitado tanto procurava.",
+            "Quero ser o porto seguro onde você descansa depois de um dia cansativo.",
+            "Não tenho pressa do futuro. O meu presente favorito é poder conversar com você agora.",
+            "Cada cicatriz nossa é a prova de que resistimos e escolhemos continuar.",
+            "Você me faz querer ser uma versão melhor de mim mesma todos os dias.",
+            "Deixar o passado para trás é o nosso maior presente para o nosso futuro.",
+            "Seu cheiro ficou gravado na memória e nenhum silêncio consegue apagar.",
+            "Vamos guardar nossos problemas só para nós e celebrar nossas vitórias em dobro.",
+            "Nenhum obstáculo é grande demais quando as duas decidem segurar firme na mão uma da outra.",
+            "Eu amo o jeito como você me entende até mesmo quando fico sem palavras.",
+            "Você é a melhor parte do meu dia, do meu mês e da minha vida.",
+            "Mesmo nos dias difíceis, meu coração escolhe você sem hesitar.",
+            "Quero aprender a te ouvir com calma, sem armaduras e sem defesas.",
+            "Nosso amor tem casca grossa, alma leve e muita vontade de dar certo.",
+            "Que sorte a minha ter cruzado com você naquele 4 de maio.",
+            "Nenhum orgulho vale a dor de ficar longe de você.",
+            "Você é a poesia mais bonita que a vida escreveu no meu caminho.",
+            "Vamos dar um passo de cada vez, sem olhar para trás, só focando no nosso abraço.",
+            "Eu te escolho hoje, amanhã e em todas as vezes que precisarmos recomeçar.",
+            "Obrigada por ter paciência comigo enquanto eu descubro como te amar melhor.",
+            "Nossa história está apenas ganhando a versão mais linda e madura de todas. 🤍"
+        ];
+
+        let currentPhraseIndex = -1;
+        function getRandomPhrase() {
+            const display = document.getElementById('phrase-display');
+            const counter = document.getElementById('phrase-counter');
+            
+            let newIndex;
+            do {
+                newIndex = Math.floor(Math.random() * cutePhrases.length);
+            } while (newIndex === currentPhraseIndex && cutePhrases.length > 1);
+            
+            currentPhraseIndex = newIndex;
+            
+            display.style.opacity = 0;
+            setTimeout(() => {
+                display.innerText = `"${cutePhrases[currentPhraseIndex]}"`;
+                display.style.opacity = 1;
+                counter.innerText = `Mensagem ${currentPhraseIndex + 1} de ${cutePhrases.length}`;
+            }, 250);
+        }
+
+        // Torcidômetro Counters (Zeroed out starting point)
+        let score1 = localStorage.getItem('torcidometro_1') ? parseInt(localStorage.getItem('torcidometro_1')) : 0;
+        let score2 = localStorage.getItem('torcidometro_2') ? parseInt(localStorage.getItem('torcidometro_2')) : 0;
+
+        function updateTreeVisualization() {
+            const total = score1 + score2;
+            document.getElementById('score-1').innerText = score1;
+            document.getElementById('score-2').innerText = score2;
+            document.getElementById('total-combined-score').innerText = total;
+
+            const treeGraphic = document.getElementById('tree-graphic');
+            const treeStatus = document.getElementById('tree-status-text');
+            const container = document.getElementById('tree-container');
+
+            // Add grow animation class
+            treeGraphic.classList.add('tree-animate');
+            setTimeout(() => treeGraphic.classList.remove('tree-animate'), 500);
+
+            if (total === 0) {
+                treeGraphic.innerText = "🌱";
+                treeStatus.innerText = "Broto Inicial (Estágio 1)";
+                container.className = "relative w-48 h-48 sm:w-56 sm:h-56 mx-auto bg-rose-50/60 rounded-full flex flex-col items-center justify-center border-2 border-rose-200/60 transition-all duration-500";
+            } else if (total < 5) {
+                treeGraphic.innerText = "🌿";
+                treeStatus.innerText = "Crescendo com Cuidado (Estágio 2)";
+                container.className = "relative w-48 h-48 sm:w-56 sm:h-56 mx-auto bg-emerald-50/70 rounded-full flex flex-col items-center justify-center border-2 border-emerald-200 transition-all duration-500 shadow-sm";
+            } else if (total < 15) {
+                treeGraphic.innerText = "🪴";
+                treeStatus.innerText = "Raizes Firmes (Estágio 3)";
+                container.className = "relative w-48 h-48 sm:w-56 sm:h-56 mx-auto bg-emerald-100/60 rounded-full flex flex-col items-center justify-center border-2 border-emerald-300 transition-all duration-500 shadow-md";
+            } else if (total < 30) {
+                treeGraphic.innerText = "🌳";
+                treeStatus.innerText = "Árvore Robusta (Estágio 4)";
+                container.className = "relative w-48 h-48 sm:w-56 sm:h-56 mx-auto bg-green-100/70 rounded-full flex flex-col items-center justify-center border-2 border-green-400 transition-all duration-500 shadow-lg";
+            } else {
+                treeGraphic.innerText = "🌸🌳💖";
+                treeStatus.innerText = "Árvore Florida & Plena (Estágio Máximo!) ✨";
+                container.className = "relative w-48 h-48 sm:w-56 sm:h-56 mx-auto bg-gradient-to-br from-pink-100 to-rose-200 rounded-full flex flex-col items-center justify-center border-4 border-rose-400 transition-all duration-500 shadow-xl pulse-glow";
+            }
+        }
+
+        // Initialize tree on load
+        updateTreeVisualization();
+
+        function boostCounter(type) {
+            if (type === 1) {
+                score1++;
+                localStorage.setItem('torcidometro_1', score1);
+                showModal('Energia Positiva! 💚', 'Mais uma dose de torcida enviada para o nosso relacionamento dar certo!', '🌱');
+            } else {
+                score2++;
+                localStorage.setItem('torcidometro_2', score2);
+                showModal('Coração Feliz! ✨', 'Que alegria saber que estamos no caminho certo e em paz hoje!', '✨');
+            }
+            updateTreeVisualization();
+        }
+    </script>
+</body>
+</html>
+```
